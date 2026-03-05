@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Bheema Foods</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .product-detail-section {
+            padding: calc(var(--space-xl) + 40px) 0 var(--space-xl);
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: flex-start;
+        }
+
+        .product-image-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background-color: var(--color-bg-alt);
+            aspect-ratio: 1;
+            position: sticky;
+            top: 100px;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info h1 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .weight-selector {
+            margin: var(--space-md) 0;
+        }
+
+        .weight-selector h4 {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-main);
+        }
+
+        .weight-options {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .weight-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            background: white;
+            font-weight: 500;
+        }
+
+        .weight-btn.active {
+            border-color: var(--color-primary);
+            background-color: var(--color-bg-alt);
+            color: var(--color-primary-dark);
+        }
+
+        .add-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-lg);
+        }
+
+        .qty-input {
+            width: 80px;
+            display: flex;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        .qty-input button {
+            width: 30px;
+            background: white;
+            color: var(--color-text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background var(--transition-fast);
+        }
+
+        .qty-input button:hover {
+            background: var(--color-bg-alt);
+        }
+
+        .qty-input input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            font-family: inherit;
+            font-weight: 600;
+            outline: none;
+            /* Hide arrows */
+            -moz-appearance: textfield;
+            appearance: none;
+        }
+
+        .qty-input input::-webkit-outer-spin-button,
+        .qty-input input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .product-details-accordion {
+            border-top: 1px solid var(--color-border);
+        }
+
+        .pd-accordion-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 1rem 0;
+        }
+
+        .pd-accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-primary-dark);
+        }
+
+        .pd-accordion-content {
+            margin-top: 1rem;
+            color: var(--color-text-muted);
+            display: none;
+        }
+
+        .pd-accordion-item.active .pd-accordion-content {
+            display: block;
+        }
+
+        .pd-accordion-item.active .pd-accordion-header i {
+            transform: rotate(180deg);
+        }
+
+        .bullet-list {
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 992px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image-container {
+                position: static;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Bheema <span class="accent-text">Foods</span></span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="shop.html" class="nav-link">Shop All</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn" aria-label="Open Cart">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <!-- Re-use cart structure -->
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-block whatsapp-btn" id="checkout-btn">
+                <i class='bx bxl-whatsapp'></i> Order via WhatsApp
+            </button>
+            <p class="cart-notice">Payment upon delivery or via direct transfer.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="product-detail-section">
+            <div class="container" id="product-container">
+                <!-- Product content will be injected here via JS -->
+                <div style="text-align: center; padding: 4rem;">Loading product details...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <!-- Footer content simple version -->
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    Bheema <span>Foods</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

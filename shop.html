@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Bheema Foods</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .page-header {
+            background-color: var(--color-bg-alt);
+            padding: var(--space-xl) 0 var(--space-md);
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            background-color: white;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-main);
+            font-weight: 500;
+            transition: all var(--transition-fast);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Bheema <span class="accent-text">Foods</span></span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="shop.html" class="nav-link active">Shop All</a></li>
+                    <li class="nav-item"><a href="index.html#philosophy" class="nav-link">Our Story</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn" aria-label="Open Cart">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be rendered here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-block whatsapp-btn" id="checkout-btn">
+                <i class='bx bxl-whatsapp'></i> Order via WhatsApp
+            </button>
+            <p class="cart-notice">Payment upon delivery or via direct transfer.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 style="font-size: clamp(2rem, 4vw, 3rem);">Shop Our Range</h1>
+                <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">Discover our collection of
+                    traditional, highly nutritious blends made from ancient Indian grains.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <!-- Filters -->
+                <div class="filter-container" id="shop-filters">
+                    <button class="filter-btn active" data-filter="all">All Products</button>
+                    <button class="filter-btn" data-filter="kids">Kids & Growth</button>
+                    <button class="filter-btn" data-filter="women">Women's Health</button>
+                    <button class="filter-btn" data-filter="wellness">Daily Wellness</button>
+                    <button class="filter-btn" data-filter="strength">Strength & Protein</button>
+                    <button class="filter-btn" data-filter="traditional">Traditional Grains</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="product-grid" id="shop-products-grid">
+                    <!-- Products injected via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    Bheema <span>Foods</span>
+                </a>
+                <p class="footer-desc">Rooted in tradition, made for today. Experience the pure power of ancient Indian
+                    nutrition.</p>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Talk to us</h4>
+                <p><i class='bx bx-phone'></i> +91 93422 35388</p>
+                <p><i class='bx bx-envelope'></i> hello@bheemafoods.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

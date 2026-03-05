@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bheema Foods | Ancient Grains. Everyday Strength.</title>
+    <meta name="description"
+        content="Bheema Foods brings you traditional family nutrition with ancient Indian grains, millets, and heritage recipes. Experience the power of natural strength.">
+
+    <!-- Google Fonts: Outfit for modern structure, Lora for traditional touch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- BoxIcons for minimalist icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Bheema <span class="accent-text">Foods</span></span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="shop.html" class="nav-link">Shop All</a></li>
+                    <li class="nav-item"><a href="#philosophy" class="nav-link">Our Story</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn" aria-label="Open Cart">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be rendered here dynamically -->
+            <div class="empty-cart-msg">Your cart is empty.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-block whatsapp-btn" id="checkout-btn">
+                <i class='bx bxl-whatsapp'></i> Order via WhatsApp
+            </button>
+            <p class="cart-notice">Payment upon delivery or via direct transfer.</p>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <span class="badge">Heritage Nutrition</span>
+                <h1 class="hero-title">Ancient Grains.<br><em>Everyday Strength.</em></h1>
+                <p class="hero-subtitle">Traditional family nutrition prepared in small batches using premium millets,
+                    sprouted grains, and heritage recipes.</p>
+                <div class="hero-cta">
+                    <a href="shop.html" class="btn btn-primary">Shop Our Range</a>
+                    <a href="#philosophy" class="btn btn-outline">Our Philosophy</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section-padding bg-alt">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--space-lg);">
+                    <h2>Shop by Goal</h2>
+                    <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">Targeted nutrition for
+                        every family member's unique needs.</p>
+                </div>
+
+                <div class="category-grid">
+                    <a href="shop.html?category=kids" class="category-card">
+                        <div class="category-icon"><i class='bx bx-child'></i></div>
+                        <h3>Kids & Growth</h3>
+                        <p>Calcium & protein-rich</p>
+                    </a>
+                    <a href="shop.html?category=women" class="category-card">
+                        <div class="category-icon"><i class='bx bx-female'></i></div>
+                        <h3>Women's Health</h3>
+                        <p>Iron & hormone balance</p>
+                    </a>
+                    <a href="shop.html?category=strength" class="category-card">
+                        <div class="category-icon"><i class='bx bx-dumbbell'></i></div>
+                        <h3>Strength & Protein</h3>
+                        <p>Muscle recovery</p>
+                    </a>
+                    <a href="shop.html?category=wellness" class="category-card">
+                        <div class="category-icon"><i class='bx bx-sun'></i></div>
+                        <h3>Daily Wellness</h3>
+                        <p>Sustained energy</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="section-padding">
+            <div class="container">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-lg);">
+                    <div>
+                        <h2>Featured Blends</h2>
+                        <p style="color: var(--color-text-muted);">Our most loved heritage recipes.</p>
+                    </div>
+                    <a href="shop.html" class="btn btn-outline" style="display: none;">View All</a>
+                    <!-- Hide on small mobile, show via css -->
+                </div>
+
+                <div class="product-grid" id="featured-products">
+                    <!-- Products injected via JS -->
+                </div>
+
+                <div class="text-center mt-2 mobile-only-btn">
+                    <a href="shop.html" class="btn btn-outline">Shop All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="section-padding bg-main"
+            style="border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="split-layout align-center">
+                    <div class="split-image"
+                        style="background-image: url('images/philosophy.png'); min-height: 400px; border-radius: var(--radius-lg); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="split-content" style="padding: var(--space-lg) 0;">
+                        <span class="badge">Our Philosophy</span>
+                        <h2>Rooted in tradition.<br>Made for today.</h2>
+                        <p>At Bheema Foods, we believe true strength comes from the ground up. We've sourced the finest
+                            ancient Indian grains and millets to recreate heritage recipes that sustained our ancestors.
+                        </p>
+                        <ul class="feature-list" style="margin-top: var(--space-md);">
+                            <li><i class='bx bx-check-circle'></i> <strong>Sprouted for Bioavailability:</strong> We
+                                sprout our grains to unlock nutrients.</li>
+                            <li><i class='bx bx-check-circle'></i> <strong>Small Batch Production:</strong> Made fresh,
+                                honoring traditional methods.</li>
+                            <li><i class='bx bx-check-circle'></i> <strong>Clean & Natural:</strong> Zero preservatives,
+                                refined sugars, or synthetics.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="section-padding bg-alt">
+            <div class="container text-center">
+                <h2 style="margin-bottom: var(--space-lg);">Why Families Trust Us</h2>
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class='bx bx-leaf'></i></div>
+                        <h4>100% Natural</h4>
+                        <p>Pure ingredients from local farms.</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class='bx bx-book-heart'></i></div>
+                        <h4>Heritage Recipes</h4>
+                        <p>Time-tested formulas handed down.</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class='bx bx-shield-quarter'></i></div>
+                        <h4>Safe Production</h4>
+                        <p>Prepared in extremely hygienic conditions.</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class='bx bx-heart'></i></div>
+                        <h4>Family Nutrition</h4>
+                        <p>Safe and beneficial for all ages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="text-center" style="margin-bottom: var(--space-lg);">Stories of Strength</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="stars" style="color: #F59E0B; margin-bottom: 0.5rem;"><i class='bx bxs-star'></i><i
+                                class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                                class='bx bxs-star'></i></div>
+                        <p>"The Sprouted Ragi Malt has completely changed my kids' morning routine. They love the taste,
+                            and I love that it's natural! No more sugar crashes."</p>
+                        <div class="author mt-2"><strong>Kamala S.</strong> - Mother of two</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars" style="color: #F59E0B; margin-bottom: 0.5rem;"><i class='bx bxs-star'></i><i
+                                class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i
+                                class='bx bxs-star'></i></div>
+                        <p>"I started using the Sathumaavu for my elderly parents. It's so easy for them to digest and
+                            gives them sustained energy. Truly a heritage product."</p>
+                        <div class="author mt-2"><strong>Rahul M.</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section-padding bg-main" style="border-top: 1px solid var(--color-border);">
+            <div class="container" style="max-width: 800px;">
+                <h2 class="text-center" style="margin-bottom: var(--space-lg);">Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <h4
+                            style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; margin: 0;">
+                            How do I order? <i class='bx bx-plus'></i></h4>
+                        <p style="margin-top: 1rem; color: var(--color-text-muted);">Add your favorite items to the cart
+                            and click "Order via WhatsApp". It's that simple! We will confirm your order and shipping
+                            details directly.</p>
+                    </div>
+                    <div class="accordion-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <h4
+                            style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; margin: 0;">
+                            Are there any preservatives? <i class='bx bx-plus'></i></h4>
+                        <p style="margin-top: 1rem; color: var(--color-text-muted);">No, all our products are 100% free
+                            from preservatives, artificial colors, and synthetic flavors. We rely on careful roasting
+                            and premium ingredients for shelf life.</p>
+                    </div>
+                    <div class="accordion-item" style="border-bottom: 1px solid var(--color-border); padding: 1rem 0;">
+                        <h4
+                            style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; margin: 0;">
+                            How long do the mixes last? <i class='bx bx-plus'></i></h4>
+                        <p style="margin-top: 1rem; color: var(--color-text-muted);">Unopened, they last for 6 months.
+                            Once opened, we recommend transferring them to an airtight container and consuming within
+                            30-45 days.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    Bheema <span>Foods</span>
+                </a>
+                <p class="footer-desc">Rooted in tradition, made for today. Experience the pure power of ancient Indian
+                    nutrition.</p>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="shop.html?category=kids">Kids & Growth</a></li>
+                    <li><a href="shop.html?category=women">Women's Health</a></li>
+                    <li><a href="shop.html?category=strength">Strength & Protein</a></li>
+                    <li><a href="shop.html">View All Products</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#philosophy">Our Story</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Talk to us</h4>
+                <p><i class='bx bx-phone'></i> +91 93422 35388</p>
+                <p><i class='bx bx-envelope'></i> hello@bheemafoods.com</p>
+                <a href="https://wa.me/919342235388" class="btn btn-sm btn-whatsapp mt-2" target="_blank">
+                    <i class='bx bxl-whatsapp'></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Bheema Foods. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
