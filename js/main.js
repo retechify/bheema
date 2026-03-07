@@ -256,12 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
         featuredProducts.forEach(product => {
             html += `
                 <div class="product-card">
-                    <a href="product.html?id=${product.id}" class="product-img-wrapper">
+                    <a href="product.html#${product.id}" class="product-img-wrapper">
                         <span class="product-tag">${product.tag}</span>
                         <img src="${product.image}" alt="${product.name}" class="product-img">
                     </a>
                     <div class="product-content">
-                        <a href="product.html?id=${product.id}"><h3 class="product-title">${product.name}</h3></a>
+                        <a href="product.html#${product.id}"><h3 class="product-title">${product.name}</h3></a>
                         <p class="product-desc">${product.shortDesc}</p>
                         <div class="product-footer">
                             <span class="product-price">₹${product.price}</span>
@@ -306,12 +306,12 @@ document.addEventListener('DOMContentLoaded', () => {
             products.forEach(product => {
                 html += `
                     <div class="product-card">
-                        <a href="product.html?id=${product.id}" class="product-img-wrapper">
+                        <a href="product.html#${product.id}" class="product-img-wrapper">
                             <span class="product-tag">${product.tag}</span>
                             <img src="${product.image}" alt="${product.name}" class="product-img">
                         </a>
                         <div class="product-content">
-                            <a href="product.html?id=${product.id}"><h3 class="product-title">${product.name}</h3></a>
+                            <a href="product.html#${product.id}"><h3 class="product-title">${product.name}</h3></a>
                             <p class="product-desc">${product.shortDesc}</p>
                             <div class="product-footer">
                                 <span class="product-price">₹${product.price}</span>
@@ -351,8 +351,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('product-container');
         if (!container) return;
 
+        // Read product ID from hash first (product.html#p1), then fall back to query params (?id=p1)
+        const hashId = window.location.hash ? window.location.hash.substring(1) : null;
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
+        const productId = hashId || urlParams.get('id');
 
         const product = getProductById(productId);
 
