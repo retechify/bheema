@@ -100,25 +100,30 @@
                 </div>
 
                 <div class="category-grid">
-                    <a href="shop.html?category=kids" class="category-card">
-                        <div class="category-icon"><i class='bx bx-child'></i></div>
-                        <h3>Kids & Growth</h3>
-                        <p>Calcium & protein-rich</p>
+                    <a href="shop.html?category=family" class="category-card">
+                        <div class="category-icon"><i class='bx bx-home-heart'></i></div>
+                        <h3>Family Nutrition</h3>
+                        <p>Complete daily nourishment</p>
+                    </a>
+                    <a href="shop.html?category=strength" class="category-card">
+                        <div class="category-icon"><i class='bx bx-dumbbell'></i></div>
+                        <h3>Strength & Energy</h3>
+                        <p>Muscle & bone support</p>
+                    </a>
+                    <a href="shop.html?category=wellness" class="category-card">
+                        <div class="category-icon"><i class='bx bx-sun'></i></div>
+                        <h3>Wellness & Detox</h3>
+                        <p>Natural body cleansing</p>
+                    </a>
+                    <a href="shop.html?category=herbal" class="category-card">
+                        <div class="category-icon"><i class='bx bx-leaf'></i></div>
+                        <h3>Herbal Powders</h3>
+                        <p>Pure green nutrition</p>
                     </a>
                     <a href="shop.html?category=women" class="category-card">
                         <div class="category-icon"><i class='bx bx-female'></i></div>
                         <h3>Women's Health</h3>
                         <p>Iron & hormone balance</p>
-                    </a>
-                    <a href="shop.html?category=strength" class="category-card">
-                        <div class="category-icon"><i class='bx bx-dumbbell'></i></div>
-                        <h3>Strength & Protein</h3>
-                        <p>Muscle recovery</p>
-                    </a>
-                    <a href="shop.html?category=wellness" class="category-card">
-                        <div class="category-icon"><i class='bx bx-sun'></i></div>
-                        <h3>Daily Wellness</h3>
-                        <p>Sustained energy</p>
                     </a>
                 </div>
             </div>
@@ -245,9 +250,103 @@
                     </div>
                 </div>
             </div>
+        <!-- Bundle Offers Section -->
+        <section class="bundle-section" id="bundles">
+            <div class="bundle-container">
+                <div class="bundle-header">
+                    <span class="badge" style="margin-bottom: var(--space-xs);">Value Deals</span>
+                    <h2 class="bundle-title">Wellness Combos for Everyday Health</h2>
+                    <p class="bundle-subtitle">Carefully curated combinations designed to provide comprehensive nutrition for your entire family, while offering great value.</p>
+                </div>
+                
+                <div class="bundle-grid">
+                    <!-- Bundle 1: Family Nutrition -->
+                    <div class="bundle-card">
+                        <div class="bundle-badge">Save 15%</div>
+                        <i class='bx bx-home-heart bundle-icon'></i>
+                        <h3 class="bundle-name">Family Nutrition Combo</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--space-md);">Complete care for the whole family</p>
+                        
+                        <ul class="bundle-features">
+                            <li><i class='bx bx-check-circle'></i> 1x Royal Heritage Nutrition Mix (300g)</li>
+                            <li><i class='bx bx-check-circle'></i> 1x 36 Multigrain Super Mix (300g)</li>
+                            <li><i class='bx bx-check-circle'></i> 1x Earth Gold Multigrain Mix (300g)</li>
+                        </ul>
+                        
+                        <div class="bundle-price-container">
+                            <span class="bundle-price-original">₹527</span>
+                            <span class="bundle-price-new">₹449</span>
+                        </div>
+                        
+                        <button class="btn btn-primary bundle-btn" onclick="cartAPI.add({
+                            id: 'bundle1',
+                            name: 'Family Nutrition Combo',
+                            price: 449,
+                            image: 'images/1. Royal Heritage Nutrition Mix.png'
+                        })">
+                            <i class='bx bx-cart-add'></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Bundle 2: Strength & Energy -->
+                    <div class="bundle-card">
+                        <div class="bundle-badge">Save 16%</div>
+                        <i class='bx bx-dumbbell bundle-icon'></i>
+                        <h3 class="bundle-name">Strength & Energy Combo</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--space-md);">For active lifestyles and stamina</p>
+                        
+                        <ul class="bundle-features">
+                            <li><i class='bx bx-check-circle'></i> 1x Karuppu Kavuni Strength Mix (300g)</li>
+                            <li><i class='bx bx-check-circle'></i> 1x Black Gold Mix (300g)</li>
+                        </ul>
+                        
+                        <div class="bundle-price-container">
+                            <span class="bundle-price-original">₹358</span>
+                            <span class="bundle-price-new">₹299</span>
+                        </div>
+                        
+                        <button class="btn btn-primary bundle-btn" onclick="cartAPI.add({
+                            id: 'bundle2',
+                            name: 'Strength \x26 Energy Combo',
+                            price: 299,
+                            image: 'images/2. Karuppu Kavuni Strength Mix.png'
+                        })">
+                            <i class='bx bx-cart-add'></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Bundle 3: Herbal Wellness -->
+                    <div class="bundle-card">
+                        <div class="bundle-badge">Save 13%</div>
+                        <i class='bx bx-leaf bundle-icon'></i>
+                        <h3 class="bundle-name">Herbal Wellness Combo</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--space-md);">Natural immunity & wellness boost</p>
+                        
+                        <ul class="bundle-features">
+                            <li><i class='bx bx-check-circle'></i> 1x Moringa Herbal Powder (100g)</li>
+                            <li><i class='bx bx-check-circle'></i> 1x Curry Leaf Herbal Powder (100g)</li>
+                        </ul>
+                        
+                        <div class="bundle-price-container">
+                            <span class="bundle-price-original">₹218</span>
+                            <span class="bundle-price-new">₹189</span>
+                        </div>
+                        
+                        <button class="btn btn-primary bundle-btn" onclick="cartAPI.add({
+                            id: 'bundle3',
+                            name: 'Herbal Wellness Combo',
+                            price: 189,
+                            image: 'images/6. Moringa Herbal Powder.png'
+                        })">
+                            <i class='bx bx-cart-add'></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- Our Philosophy section (was already here) -->
+        <section id="story" class="section-padding">
         <section id="faq" class="section-padding bg-main" style="border-top: 1px solid var(--color-border);">
             <div class="container" style="max-width: 800px;">
                 <h2 class="text-center" style="margin-bottom: var(--space-lg);">Frequently Asked Questions</h2>
@@ -299,9 +398,9 @@
             <div class="footer-links">
                 <h4>Shop</h4>
                 <ul>
-                    <li><a href="shop.html?category=kids">Kids & Growth</a></li>
-                    <li><a href="shop.html?category=women">Women's Health</a></li>
-                    <li><a href="shop.html?category=strength">Strength & Protein</a></li>
+                    <li><a href="shop.html?category=family">Family Nutrition</a></li>
+                    <li><a href="shop.html?category=strength">Strength & Energy</a></li>
+                    <li><a href="shop.html?category=herbal">Herbal Powders</a></li>
                     <li><a href="shop.html">View All Products</a></li>
                 </ul>
             </div>

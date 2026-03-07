@@ -596,6 +596,131 @@ main {
     flex: 1;
 }
 
+/* --- Bundle Section Styling --- */
+.bundle-section {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-bg-alt); /* slightly warmer bg */
+    border-top: 1px solid var(--color-border);
+}
+
+.bundle-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.bundle-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.bundle-title {
+    font-size: 2.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-sm);
+    font-family: var(--font-heading);
+}
+
+.bundle-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bundle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.bundle-card {
+    background-color: var(--color-bg-main);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-lg);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.bundle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.bundle-badge {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 5px 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: rotate(45deg);
+    letter-spacing: 1px;
+}
+
+.bundle-icon {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.bundle-name {
+    font-size: 1.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-sm);
+    font-family: var(--font-heading);
+}
+
+.bundle-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--space-md);
+    text-align: left;
+}
+
+.bundle-features li {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.bundle-features li i {
+    color: var(--color-primary);
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.bundle-price-container {
+    margin-bottom: var(--space-md);
+}
+
+.bundle-price-original {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+.bundle-price-new {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.bundle-btn {
+    width: 100%;
+    margin-top: auto;
+}
+
 .product-title {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
