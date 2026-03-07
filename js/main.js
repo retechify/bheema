@@ -70,7 +70,35 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     }
 
-    function addToCart(productId, weightId, quantity = 1) {
+    function addToCart(productIdOrBundle, weightId, quantity = 1) {
+        // Handle bundle objects: cartAPI.add({ id, name, price, image })
+        if (typeof productIdOrBundle === 'object' && productIdOrBundle !== null) {
+            const bundle = productIdOrBundle;
+            const existingIndex = cart.findIndex(item => item.productId === bundle.id);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push({
+                    productId: bundle.id,
+                    name: bundle.name,
+                    image: bundle.image,
+                    weightId: 'bundle',
+                    weightLabel: 'Combo',
+                    price: bundle.price,
+                    quantity: 1
+                });
+            }
+
+            saveCart();
+            if (!cartSidebar.classList.contains('active')) {
+                toggleCart();
+            }
+            return;
+        }
+
+        // Normal product add
+        const productId = productIdOrBundle;
         const product = getProductById(productId);
         if (!product) return;
 
