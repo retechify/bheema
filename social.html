@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Social | Bheema's Food Care</title>
+    <meta name="description"
+        content="Our presence in the community, social events, and educational YouTube Shorts about traditional Indian nutrition.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .social-header {
+            background-color: var(--color-bg-alt);
+            padding: var(--space-xl) 0;
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-md);
+            padding: var(--space-xl) 0;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-medium);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .youtube-section {
+            padding: var(--space-xl) 0;
+            background-color: var(--color-bg-main);
+        }
+
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .yt-placeholder {
+            aspect-ratio: 9/16;
+            background-color: #f3f4f6;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 2px dashed var(--color-border);
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+
+        .yt-placeholder:hover {
+            background-color: #e5e7eb;
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .yt-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo/logo.png" alt="Bheema's Food Care" class="logo-img">
+                <span>Bheema's <span class="accent-text">Food Care</span></span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="shop.html" class="nav-link">Shop All</a></li>
+                    <li class="nav-item"><a href="story.html" class="nav-link">Our Story</a></li>
+                    <li class="nav-item"><a href="social.html" class="nav-link active">Events</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn" aria-label="Open Cart">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-block whatsapp-btn" id="checkout-btn">
+                <i class='bx bxl-whatsapp'></i> Order via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <section class="social-header">
+            <div class="container">
+                <span class="badge">Community Presence</span>
+                <h1 style="margin-top: 1rem;">Social Events & Exhibitions</h1>
+                <p style="color: var(--color-text-muted); max-width: 700px; margin: 1rem auto 0;">Connecting with you beyond our store at exhibitions, stalls, and community gatherings.</p>
+            </div>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/founderdetails/img1.jpeg" alt="Exhibition Stall 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/founderdetails/img2.jpeg" alt="Exhibition Stall 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/founderdetails/img3.jpeg" alt="Exhibition Stall 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/founderdetails/img4.jpeg" alt="Exhibition Stall 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/founderdetails/img5.jpeg" alt="Exhibition Stall 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/founderdetails/img6.jpeg" alt="Exhibition Stall 6">
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube Shorts Section -->
+        <section class="youtube-section" style="border-top: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="text-center">
+                    <span class="badge" style="margin-bottom: 0.5rem;">Watch & Learn</span>
+                    <h2>YouTube Shorts</h2>
+                    <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">Stay updated with our latest videos, nutritional tips, and recipe ideas.</p>
+                </div>
+
+                <div class="youtube-grid">
+                    <a href="#" class="yt-placeholder">
+                        <i class='bx bxl-youtube'></i>
+                        <span>YouTube Short Placeholder</span>
+                    </a>
+                    <a href="#" class="yt-placeholder">
+                        <i class='bx bxl-youtube'></i>
+                        <span>YouTube Short Placeholder</span>
+                    </a>
+                    <a href="#" class="yt-placeholder">
+                        <i class='bx bxl-youtube'></i>
+                        <span>YouTube Short Placeholder</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="images/logo/logo.png" alt="Bheema's Food Care" class="logo-img" style="height: 40px; width: auto;">
+                </a>
+                <p class="footer-desc">Bheema's Food Care is committed to bringing traditional family nutrition to your modern lifestyle.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/bheemas_food_care/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Talk to us</h4>
+                <p><i class='bx bx-phone'></i> +91 93424 68878</p>
+                <p><i class='bx bx-envelope'></i> bheemas2023@gmail.com</p>
+                <p><i class='bx bx-map'></i> 171j, orchids apartment, Rakindo, kovaipudur, Coimbatore - 641042</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Bheema's Food Care. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js?v=3"></script>
+    <script src="js/main.js?v=3"></script>
+</body>
+
+</html>

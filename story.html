@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Bheema's Food Care</title>
+    <meta name="description"
+        content="The journey of Bheema's Food Care. Rooted in tradition, made for today. Experience the pure power of ancient Indian nutrition.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .story-hero {
+            background-color: var(--color-bg-alt);
+            padding: var(--space-xl) 0;
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .story-section {
+            padding: var(--space-xl) 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .story-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+            .story-grid.reverse {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo/logo.png" alt="Bheema's Food Care" class="logo-img">
+                <span>Bheema's <span class="accent-text">Food Care</span></span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="shop.html" class="nav-link">Shop All</a></li>
+                    <li class="nav-item"><a href="story.html" class="nav-link active">Our Story</a></li>
+                    <li class="nav-item"><a href="social.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn" aria-label="Open Cart">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar (Essential for functionality) -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-block whatsapp-btn" id="checkout-btn">
+                <i class='bx bxl-whatsapp'></i> Order via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <section class="story-hero">
+            <div class="container">
+                <span class="badge">Our Journey</span>
+                <h1 style="margin-top: 1rem;">Rooted in Tradition,<br>Made for Today.</h1>
+                <p style="color: var(--color-text-muted); max-width: 700px; margin: 1rem auto 0;">The journey of Bheema's Food Care began with a simple mission: to bring the health secrets of our ancestors to the modern table.</p>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-content">
+                        <h2>The Inspiration</h2>
+                        <p>At Bheema's Food Care, we believe true strength comes from the ground up. We've sourced the finest ancient Indian grains and millets to recreate heritage recipes that sustained our ancestors for generations.</p>
+                        <p style="margin-top: 1rem;">Recognizing the declining use of ancient grains in modern diets, we set out to create a bridge between time-tested wisdom and contemporary convenience.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="images/philosophy.png" alt="Ancient Grains Inspiration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section bg-alt" style="border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="story-grid reverse">
+                    <div class="story-image">
+                        <img src="images/founder.jpeg" alt="Nithya - Founder">
+                    </div>
+                    <div class="story-content">
+                        <span class="badge">Meet the Founder</span>
+                        <h2>Nithya's Vision</h2>
+                        <p>Our founder Nithya holds a deep passion for traditional Indian nutrition. With Bheema's Food Care, she has committed to making heritage foods accessible, convenient, and delicious for the modern family without compromising on purity.</p>
+                        <p style="margin-top: 1rem;">"It's not just about food; it's about reclaiming our heritage of health and passing it on to the next generation."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container text-center">
+                <h2>Our Commitment</h2>
+                <div class="trust-grid" style="margin-top: var(--space-lg);">
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class='bx bx-leaf'></i></div>
+                        <h4>100% Natural</h4>
+                        <p>Zero preservatives or synthetics.</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class='bx bx-book-heart'></i></div>
+                        <h4>Heritage Recipes</h4>
+                        <p>Time-tested formulas handed down.</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon"><i class='bx bx-shield-quarter'></i></div>
+                        <h4>Small Batches</h4>
+                        <p>Prepared with care and hygiene.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="images/logo/logo.png" alt="Bheema's Food Care" class="logo-img" style="height: 40px; width: auto;">
+                </a>
+                <p class="footer-desc">Traditional family nutrition prepared in small batches using premium millets and heritage recipes.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/bheemas_food_care/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Talk to us</h4>
+                <p><i class='bx bx-phone'></i> +91 93424 68878</p>
+                <p><i class='bx bx-envelope'></i> bheemas2023@gmail.com</p>
+                <p><i class='bx bx-map'></i> 171j, orchids apartment, Rakindo, kovaipudur, Coimbatore - 641042</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Bheema's Food Care. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js?v=3"></script>
+    <script src="js/main.js?v=3"></script>
+</body>
+
+</html>

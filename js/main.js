@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- State ---
     let cart = JSON.parse(localStorage.getItem('bheema_cart')) || [];
-    const WHATSAPP_NUMBER = '919342235388'; // Brand's WhatsApp number
+    const WHATSAPP_NUMBER = '919342468878'; // Upgraded WhatsApp number
 
     // --- DOM Elements ---
     const header = document.querySelector('.header');
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) return;
 
-            let message = "Hi Bheema Foods! I would like to place an order:%0A%0A";
+            let message = "Hi Bheema's Food Care! I would like to place an order:%0A%0A";
             let total = 0;
 
             cart.forEach((item, index) => {
@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Set page title dynamically
-        document.title = `${product.name} | Bheema Foods`;
+        document.title = `${product.name} | Bheema's Food Care`;
 
         let selectedWeight = product.weights[0];
         let currentQuantity = 1;
@@ -421,16 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <!-- Accordions for Details -->
                     <div class="product-details-accordion">
                         <div class="pd-accordion-item active">
-                            <div class="pd-accordion-header">
-                                Ingredients <i class='bx bx-chevron-down'></i>
-                            </div>
-                            <div class="pd-accordion-content">
-                                <ul class="bullet-list">
-                                    ${ingredientsHTML}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="pd-accordion-item">
                             <div class="pd-accordion-header">
                                 Health Benefits <i class='bx bx-chevron-down'></i>
                             </div>
@@ -507,7 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Buy Now via WhatsApp directly
         document.getElementById('pd-buy-now')?.addEventListener('click', () => {
             const itemTotal = selectedWeight.price * currentQuantity;
-            let message = "Hi Bheema Foods! I would like to place a direct order:%0A%0A";
+            let message = "Hi Bheema's Food Care! I would like to place a direct order:%0A%0A";
             message += `Product: ${product.name}%0A`;
             message += `Size: ${selectedWeight.label}%0A`;
             message += `Quantity: ${currentQuantity}%0A`;

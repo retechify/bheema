@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details | Bheema Foods</title>
+    <title>Product Details | Bheema's Food Care</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        .product-detail-section {
-            padding: calc(var(--space-xl) + 40px) 0 var(--space-xl);
+        .product-page {
+            padding: var(--space-xl) 0;
         }
 
         .product-layout {
@@ -27,162 +27,143 @@
         }
 
         .product-image-container {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            background-color: var(--color-bg-alt);
-            aspect-ratio: 1;
             position: sticky;
             top: 100px;
+            background-color: var(--color-bg-alt);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
         }
 
         .product-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
         }
 
         .product-info h1 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 0.5rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
         }
 
         .product-info .price {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--color-primary);
-            margin-bottom: var(--space-sm);
+            margin-bottom: 1.5rem;
         }
 
         .weight-selector {
-            margin: var(--space-md) 0;
-        }
-
-        .weight-selector h4 {
-            margin-bottom: 0.5rem;
-            color: var(--color-text-main);
+            margin-bottom: 2rem;
         }
 
         .weight-options {
             display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
         }
 
         .weight-btn {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.5rem;
             border: 1px solid var(--color-border);
             border-radius: var(--radius-sm);
-            cursor: pointer;
-            transition: all var(--transition-fast);
             background: white;
+            cursor: pointer;
             font-weight: 500;
+            transition: all var(--transition-fast);
         }
 
         .weight-btn.active {
+            background-color: var(--color-primary);
+            color: white;
             border-color: var(--color-primary);
-            background-color: var(--color-bg-alt);
-            color: var(--color-primary-dark);
         }
 
         .add-actions {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: var(--space-lg);
+            margin-bottom: 1.5rem;
         }
 
         .qty-input {
-            width: 80px;
             display: flex;
+            align-items: center;
             border: 1px solid var(--color-border);
-            border-radius: var(--radius-full);
+            border-radius: var(--radius-sm);
             overflow: hidden;
         }
 
         .qty-input button {
-            width: 30px;
-            background: white;
-            color: var(--color-text-main);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background var(--transition-fast);
-        }
-
-        .qty-input button:hover {
             background: var(--color-bg-alt);
+            border: none;
+            width: 40px;
+            height: 48px;
+            cursor: pointer;
+            font-size: 1.25rem;
         }
 
         .qty-input input {
-            width: 40px;
+            width: 50px;
             text-align: center;
             border: none;
-            font-family: inherit;
+            font-size: 1rem;
             font-weight: 600;
-            outline: none;
-            /* Hide arrows */
-            -moz-appearance: textfield;
-            appearance: none;
+            background: transparent;
         }
 
-        .qty-input input::-webkit-outer-spin-button,
-        .qty-input input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 600;
         }
 
-        .product-details-accordion {
-            border-top: 1px solid var(--color-border);
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
         }
 
         .pd-accordion-item {
             border-bottom: 1px solid var(--color-border);
-            padding: 1rem 0;
         }
 
         .pd-accordion-header {
+            padding: 1rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            font-family: var(--font-heading);
             font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--color-primary-dark);
         }
 
         .pd-accordion-content {
-            margin-top: 1rem;
-            color: var(--color-text-muted);
+            padding-bottom: 1rem;
             display: none;
+            color: var(--color-text-muted);
         }
 
         .pd-accordion-item.active .pd-accordion-content {
             display: block;
         }
 
-        .pd-accordion-item.active .pd-accordion-header i {
+        .pd-accordion-item.active .bx-chevron-down {
             transform: rotate(180deg);
         }
 
-        .bullet-list {
-            padding-left: 1.5rem;
-            list-style-type: disc;
-        }
-
-        .bullet-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        @media (max-width: 992px) {
+        @media (max-width: 868px) {
             .product-layout {
                 grid-template-columns: 1fr;
             }
 
             .product-image-container {
-                position: static;
-                max-width: 600px;
-                margin: 0 auto;
+                position: relative;
+                top: 0;
             }
         }
     </style>
@@ -193,13 +174,16 @@
     <header class="header">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-text">Bheema <span class="accent-text">Foods</span></span>
+                <img src="images/logo/logo.png" alt="Bheema's Food Care" class="logo-img">
+                <span>Bheema's <span class="accent-text">Food Care</span></span>
             </a>
 
             <nav class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="shop.html" class="nav-link">Shop All</a></li>
+                    <li class="nav-item"><a href="story.html" class="nav-link">Our Story</a></li>
+                    <li class="nav-item"><a href="social.html" class="nav-link">Events</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -219,7 +203,6 @@
     <!-- Cart Sidebar -->
     <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-sidebar" id="cart-sidebar">
-        <!-- Re-use cart structure -->
         <div class="cart-header">
             <h3>Your Cart</h3>
             <button class="close-cart" id="close-cart"><i class='bx bx-x'></i></button>
@@ -233,27 +216,36 @@
             <button class="btn btn-primary btn-block whatsapp-btn" id="checkout-btn">
                 <i class='bx bxl-whatsapp'></i> Order via WhatsApp
             </button>
-            <p class="cart-notice">Payment upon delivery or via direct transfer.</p>
         </div>
     </div>
 
-    <main>
-        <section class="product-detail-section">
-            <div class="container" id="product-container">
-                <!-- Product content will be injected here via JS -->
-                <div style="text-align: center; padding: 4rem;">Loading product details...</div>
+    <main class="product-page">
+        <div class="container" id="product-container">
+            <!-- Product data will be injected here by main.js -->
+            <div style="text-align: center; padding: 5rem 0;">
+                <p>Loading product details...</p>
             </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer" id="contact">
-        <!-- Footer content simple version -->
+    <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="index.html" class="logo footer-logo">
-                    Bheema <span>Foods</span>
+                    <img src="images/logo/logo.png" alt="Bheema's Food Care" class="logo-img" style="height: 40px; width: auto;">
                 </a>
+                <p class="footer-desc">Rooted in tradition, made for today. Experience the pure power of ancient Indian
+                    nutrition.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/bheemas_food_care/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Talk to us</h4>
+                <p><i class='bx bx-phone'></i> +91 93424 68878</p>
+                <p><i class='bx bx-envelope'></i> bheemas2023@gmail.com</p>
             </div>
         </div>
     </footer>
