@@ -245,6 +245,13 @@ document.addEventListener('DOMContentLoaded', () => {
         get: () => cart
     };
 
+    // Helper function to add multiple bundle items individually
+    window.addBundleItems = function(productIds, weightId) {
+        productIds.forEach(id => {
+            addToCart(id, weightId, 1);
+        });
+    };
+
     // --- Homepage Logic ---
     function renderFeaturedProducts() {
         const container = document.getElementById('featured-products');
@@ -254,21 +261,34 @@ document.addEventListener('DOMContentLoaded', () => {
         let html = '';
 
         featuredProducts.forEach(product => {
+            const waMsg = encodeURIComponent(`Hi, I want to order ${product.name} - ${product.weights[0].label} (₹${product.price})`);
+            const badgeHTML = product.badge
+                ? `<span class="product-tag ${product.badge}">${product.badgeLabel}</span>`
+                : `<span class="product-tag">${product.tag}</span>`;
+
             html += `
                 <div class="product-card">
                     <a href="product.html#${product.id}" class="product-img-wrapper">
-                        <span class="product-tag">${product.tag}</span>
-                        <img src="${product.image}" alt="${product.name}" class="product-img">
+                        ${badgeHTML}
+                        <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy">
                     </a>
                     <div class="product-content">
+                        <p class="product-category-tag">${product.tag}</p>
                         <a href="product.html#${product.id}"><h3 class="product-title">${product.name}</h3></a>
                         <p class="product-desc">${product.shortDesc}</p>
-                        <div class="product-footer">
+                        <div class="product-price-row">
                             <span class="product-price">₹${product.price}</span>
-                            <button class="add-to-cart-icon" onclick="cartAPI.add('${product.id}', '${product.weights[0].id}')" aria-label="Add to cart">
-                                <i class='bx bx-plus'></i>
+                            <span class="product-weight">/ ${product.weights[0].label}</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://wa.me/919342468878?text=${waMsg}" target="_blank" class="btn-wa-product">
+                                <i class='bx bxl-whatsapp'></i> Order on WhatsApp
+                            </a>
+                            <button class="btn-add-cart" onclick="cartAPI.add('${product.id}', '${product.weights[0].id}')">
+                                <i class='bx bx-cart-add'></i> Add to Cart
                             </button>
                         </div>
+                        <p class="product-meta-hint">Fresh batch weekly · No preservatives</p>
                     </div>
                 </div>
             `;
@@ -304,21 +324,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             products.forEach(product => {
+                const waMsg = encodeURIComponent(`Hi, I want to order ${product.name} - ${product.weights[0].label} (₹${product.price})`);
+                const badgeHTML = product.badge
+                    ? `<span class="product-tag ${product.badge}">${product.badgeLabel}</span>`
+                    : `<span class="product-tag">${product.tag}</span>`;
+
                 html += `
                     <div class="product-card">
                         <a href="product.html#${product.id}" class="product-img-wrapper">
-                            <span class="product-tag">${product.tag}</span>
-                            <img src="${product.image}" alt="${product.name}" class="product-img">
+                            ${badgeHTML}
+                            <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy">
                         </a>
                         <div class="product-content">
+                            <p class="product-category-tag">${product.tag}</p>
                             <a href="product.html#${product.id}"><h3 class="product-title">${product.name}</h3></a>
                             <p class="product-desc">${product.shortDesc}</p>
-                            <div class="product-footer">
+                            <div class="product-price-row">
                                 <span class="product-price">₹${product.price}</span>
-                                <button class="add-to-cart-icon" onclick="cartAPI.add('${product.id}', '${product.weights[0].id}')" aria-label="Add to cart">
-                                    <i class='bx bx-plus'></i>
+                                <span class="product-weight">/ ${product.weights[0].label}</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="https://wa.me/919342468878?text=${waMsg}" target="_blank" class="btn-wa-product">
+                                    <i class='bx bxl-whatsapp'></i> Order on WhatsApp
+                                </a>
+                                <button class="btn-add-cart" onclick="cartAPI.add('${product.id}', '${product.weights[0].id}')">
+                                    <i class='bx bx-cart-add'></i> Add to Cart
                                 </button>
                             </div>
+                            <p class="product-meta-hint">Fresh batch weekly · No preservatives</p>
                         </div>
                     </div>
                 `;

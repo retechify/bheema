@@ -3,8 +3,11 @@ const products = [
         id: "p1",
         name: "Nutrition of the Royal Lineage",
         category: "family",
-        tag: "Royal Heritage Nutrition Mix",
-        price: 149,
+        tag: "Multigrain Nutrition Mix",
+        badge: "bestseller",
+        badgeLabel: "⭐ Best Seller",
+        featured: true,
+        price: 135,
         image: "images/1. Royal Heritage Nutrition Mix.png",
         shortDesc: "Rich in Protein & Fiber",
         description: "A multigrain health mix that boosts energy naturally, helps regulate blood sugar, and supports heart health.",
@@ -12,14 +15,17 @@ const products = [
         benefits: ["Rich in protein and fiber", "Boosts energy naturally", "Helps regulate blood sugar", "Supports heart health"],
         preparation: "Mix 2-3 tablespoons with hot water or milk. Stir well and enjoy.",
         whoFor: "Daily family nutrition — suitable for all ages",
-        weights: [{ id: "300g", label: "300g", price: 149 }]
+        weights: [{ id: "300g", label: "300g", price: 135 }]
     },
     {
         id: "p2",
         name: "Life-Guarding King",
         category: "strength",
-        tag: "Karuppu Kavuni Strength Mix",
-        price: 179,
+        tag: "Karuppu Kavuni Cardamom Porridge",
+        badge: "popular",
+        badgeLabel: "🔥 Popular Choice",
+        featured: true,
+        price: 170,
         image: "images/2. Karuppu Kavuni Strength Mix.png",
         shortDesc: "Strengthens Bones & Muscles",
         description: "Black rice nutrition mix rich in iron and antioxidants. Improves digestion, gut health, and supports skin & hair.",
@@ -27,14 +33,17 @@ const products = [
         benefits: ["Strengthens bones and muscles", "Rich in iron and antioxidants", "Improves digestion and gut health", "Supports skin and hair health"],
         preparation: "Cook like porridge with milk or water.",
         whoFor: "Strength and stamina — ideal for active lifestyles",
-        weights: [{ id: "300g", label: "300g", price: 179 }]
+        weights: [{ id: "300g", label: "300g", price: 170 }]
     },
     {
         id: "p3",
         name: "Emperor of Health",
         category: "wellness",
-        tag: "Emperor Health Mix",
-        price: 159,
+        tag: "Karuppu Kavuni Idiyappam / Puttu / Kozhukattai Flour",
+        badge: "",
+        badgeLabel: "",
+        featured: true,
+        price: 199,
         image: "images/3. Emperor Health Mix.png",
         shortDesc: "Natural Body Detox",
         description: "A potent blend of black gram, green gram, and horse gram. Strengthens the nervous system and improves metabolism.",
@@ -42,14 +51,17 @@ const products = [
         benefits: ["Natural body detox", "Strengthens nervous system", "Reduces body heat", "Improves metabolism"],
         preparation: "Can be used for Idli, Puttu, or Kozhukattai.",
         whoFor: "Whole body wellness — suitable for everyone",
-        weights: [{ id: "300g", label: "300g", price: 159 }]
+        weights: [{ id: "300g", label: "300g", price: 199 }]
     },
     {
         id: "p4",
         name: "Black Gold",
         category: "strength",
-        tag: "Black Gold Mix",
-        price: 139,
+        tag: "Black Urad Dal Porridge Mix",
+        badge: "",
+        badgeLabel: "",
+        featured: false,
+        price: 126,
         image: "images/4. Black Gold Mix.png",
         shortDesc: "Boosts Energy & Stamina",
         description: "Black urad nutrition mix rich in iron and magnesium. Supports joint, bone health, and provides protein-rich pulse nutrition.",
@@ -57,14 +69,17 @@ const products = [
         benefits: ["Boosts energy and stamina", "Supports joint and bone health", "Rich in iron and magnesium", "Protein-rich pulse nutrition"],
         preparation: "Mix with milk or water, cook as kanji.",
         whoFor: "Bone strength — ideal for growing children and elderly",
-        weights: [{ id: "300g", label: "300g", price: 139 }]
+        weights: [{ id: "300g", label: "300g", price: 126 }]
     },
     {
         id: "p5",
         name: "Earth Gold",
         category: "family",
-        tag: "Earth Gold Multigrain Mix",
-        price: 169,
+        tag: "Sprouted Millet Mix",
+        badge: "freshbatch",
+        badgeLabel: "🌿 Fresh Batch",
+        featured: true,
+        price: 155,
         image: "images/5. Earth Gold Multigrain Mix.png",
         shortDesc: "Boosts Immunity & Energy",
         description: "Sprouted multigrain mix that helps manage sugar levels, supports muscle recovery, and balances hormones naturally.",
@@ -72,14 +87,17 @@ const products = [
         benefits: ["Boosts immunity and energy", "Helps manage sugar levels", "Supports muscle recovery", "Balances hormones naturally"],
         preparation: "Cook like regular oats with milk or water.",
         whoFor: "Daily wellness nutrition — suitable for the whole family",
-        weights: [{ id: "300g", label: "300g", price: 169 }]
+        weights: [{ id: "300g", label: "300g", price: 155 }]
     },
     {
         id: "p6",
         name: "Queen of Natural Medicine",
         category: "herbal",
-        tag: "Moringa Herbal Powder",
-        price: 95,
+        tag: "Moringa Powder",
+        badge: "",
+        badgeLabel: "",
+        featured: true,
+        price: 106,
         image: "images/6. Moringa Herbal Powder.png",
         shortDesc: "Reduces Tiredness & Weakness",
         description: "A natural blood purifier and immunity booster that enhances skin glow and reduces fatigue.",
@@ -87,14 +105,17 @@ const products = [
         benefits: ["Reduces tiredness and weakness", "Natural blood purifier", "Immunity booster", "Enhances skin glow"],
         preparation: "Mix with hot rice and ghee, or use with Idli/Dosa.",
         whoFor: "Daily health supplement — suitable for all ages",
-        weights: [{ id: "100g", label: "100g", price: 95 }]
+        weights: [{ id: "100g", label: "100g", price: 106 }]
     },
     {
         id: "p7",
         name: "Life-Guarding Queen",
         category: "women",
-        tag: "Karuppu Kavuni Premium Mix",
-        price: 169,
+        tag: "Karuppu Kavuni Masala Porridge",
+        badge: "",
+        badgeLabel: "",
+        featured: true,
+        price: 160,
         image: "images/7. Karuppu Kavuni Premium Mix.png",
         shortDesc: "Cellular Protection & Anti-Aging",
         description: "Black rice premium mix that supports brain & nerve function, balances appetite hormones and strengthens stress resilience.",
@@ -102,14 +123,17 @@ const products = [
         benefits: ["Cellular protection and anti-aging", "Supports brain and nerve function", "Balances appetite hormones", "Strengthens stress resilience"],
         preparation: "Cook like porridge with milk or water.",
         whoFor: "Women's health — ideal for daily wellness",
-        weights: [{ id: "300g", label: "300g", price: 169 }]
+        weights: [{ id: "300g", label: "300g", price: 160 }]
     },
     {
         id: "p8",
         name: "The Time-Conquering King",
         category: "family",
-        tag: "36 Multigrain Super Nutrition Mix",
-        price: 149,
+        tag: "Sprouted Horse Gram Porridge Mix",
+        badge: "",
+        badgeLabel: "",
+        featured: false,
+        price: 145,
         image: "images/8. 36 Multigrain Super Nutrition Mix.png",
         shortDesc: "Supports Liver & Kidney Function",
         description: "Made from 36 traditional grains and millets. Improves mineral absorption, reduces inflammatory load, and promotes cell repair.",
@@ -117,14 +141,17 @@ const products = [
         benefits: ["Supports liver and kidney function", "Improves mineral absorption", "Reduces inflammatory load", "Promotes cell repair"],
         preparation: "Mix with warm milk or water.",
         whoFor: "Complete family nutrition — beneficial for all ages",
-        weights: [{ id: "300g", label: "300g", price: 149 }]
+        weights: [{ id: "300g", label: "300g", price: 145 }]
     },
     {
         id: "p9",
         name: "Health Sovereign Leaf",
         category: "herbal",
-        tag: "Curry Leaf Herbal Powder",
-        price: 95,
+        tag: "Curry Leaf Powder",
+        badge: "",
+        badgeLabel: "",
+        featured: false,
+        price: 100,
         image: "images/9. Curry Leaf Herbal Powder.png",
         shortDesc: "Supports Healthy Hair Growth",
         description: "Controls excess body heat, reduces bad cholesterol, and provides mineral-rich green nutrition.",
@@ -132,13 +159,16 @@ const products = [
         benefits: ["Supports healthy hair growth", "Controls excess body heat", "Reduces bad cholesterol", "Mineral-rich green nutrition"],
         preparation: "Mix with hot rice and ghee or use with Idli.",
         whoFor: "Hair and wellness support — suitable for everyone",
-        weights: [{ id: "100g", label: "100g", price: 95 }]
+        weights: [{ id: "100g", label: "100g", price: 100 }]
     },
     {
         id: "p10",
         name: "Honey Fig Natural Sweetener",
         category: "family",
         tag: "Honey Fig Powder",
+        badge: "",
+        badgeLabel: "",
+        featured: false,
         price: 179,
         image: "images/10. Honey Fig Natural Sweetener Powder.png",
         shortDesc: "Natural Sugar Alternative",
@@ -151,22 +181,13 @@ const products = [
     }
 ];
 
-
-// Helper functions for data access
-function getAllProducts() {
-    return products;
-}
-
-function getProductById(id) {
-    return products.find(p => p.id === id);
-}
-
+// Helper functions
+function getAllProducts() { return products; }
+function getProductById(id) { return products.find(p => p.id === id); }
 function getProductsByCategory(category) {
     if (!category || category === 'all') return products;
     return products.filter(p => p.category === category);
 }
-
 function getFeaturedProducts() {
-    // Return top 3 products for homepage
-    return products.slice(0, 3);
+    return products.filter(p => p.featured === true);
 }
